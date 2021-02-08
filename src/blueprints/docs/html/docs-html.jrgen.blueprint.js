@@ -23,6 +23,13 @@ module.exports = (schema) => {
       ),
       methods: Object.keys(schema.methods).map((key) => {
         const methodSchema = schema.methods[key];
+
+        methodSchema.errors.forEach(error => {
+          if(error.data !== null) {
+            error.data = JSON.stringify(error.data);
+          }
+        });
+
         return {
           id: key.replace(/\./g, "_"),
           name: key,

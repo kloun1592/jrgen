@@ -80,6 +80,10 @@
       .card.disabled, .nav-link.disabled {
         opacity: 0.5;
       }
+
+      .nav {
+          margin-bottom: 50px;
+      }
     </style>
   </head>
 
@@ -198,12 +202,14 @@
                           <th>Code</th>
                           <th>Message</th>
                           <th>Description</th>
+                          <th>Data</th>
                         </tr>
                         {{#errors}}
                         <tr>
                           <td>{{code}}</td>
                           <td>{{message}}</td>
                           <td>{{{description}}}</td>
+                          <td>{{{data}}}</td>
                         </tr>
                         {{/errors}}
                       </table>
